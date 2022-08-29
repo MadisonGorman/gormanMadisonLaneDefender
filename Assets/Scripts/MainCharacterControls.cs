@@ -32,6 +32,9 @@ public class MainCharacterControls : MonoBehaviour
         {
             newPosition.y += yMovement * Time.deltaTime * movementSpeed;
 
+            // Restricts the main character's movement to the defined vertical range
+            newPosition.y = Mathf.Clamp(newPosition.y, -3.48f, 1.56f);
+
             transform.position = newPosition;
         }
 
@@ -39,6 +42,9 @@ public class MainCharacterControls : MonoBehaviour
         if (Input.GetKey(moveDownFirstOption) || Input.GetKey(moveDownSecondOption))
         {
             newPosition.y += yMovement * Time.deltaTime * movementSpeed;
+
+            // Restricts the main character's movement to the defined vertical range
+            newPosition.y = Mathf.Clamp(newPosition.y, -3.48f, 1.56f);
 
             transform.position = newPosition;
         }
