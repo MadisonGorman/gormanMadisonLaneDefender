@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnBullet : MonoBehaviour
+public class BulletFunctionality : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
