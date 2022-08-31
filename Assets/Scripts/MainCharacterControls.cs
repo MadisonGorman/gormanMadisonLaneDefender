@@ -60,7 +60,6 @@ public class MainCharacterControls : MonoBehaviour
             transform.position = newPosition;
         }
 
-        // NOTE: Need to add the delay between firings
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         if (Input.GetKey(shootBullet))
         {
