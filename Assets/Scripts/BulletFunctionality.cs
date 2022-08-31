@@ -23,6 +23,8 @@ public class BulletFunctionality : MonoBehaviour
         Debug.Log(detectCollision.name);
 
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-        Destroy(gameObject);
+        //Destroy(gameObject);
+
+        // NOTE: Need to ensure that the bullet is destroyed upon hitting an enemy or leaving the screen
     }
 }
