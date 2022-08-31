@@ -18,6 +18,9 @@ public class MainCharacterControls : MonoBehaviour
     public GameObject bulletReference;
     public Transform bulletSpawnLocation;
 
+    // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+    bool playerCanShootBullets = true;
+
     // public AudioClip bulletShot;
 
     // Start is called before the first frame update
@@ -61,9 +64,29 @@ public class MainCharacterControls : MonoBehaviour
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         if (Input.GetKey(shootBullet))
         {
-            Instantiate(bulletReference, bulletSpawnLocation.position, Quaternion.identity);
-
             // AudioSource.PlayClipAtPoint(bulletShot, bulletSpawnLocation.position);
+
+            // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+            if (playerCanShootBullets)
+            {
+                StartCoroutine(SpawnBullet());
+            }
         }
+    }
+
+    // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+    IEnumerator SpawnBullet()
+    {
+        // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+        Instantiate(bulletReference, bulletSpawnLocation.position, Quaternion.identity);
+
+        // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+        playerCanShootBullets = false;
+
+        // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+        yield return new WaitForSeconds(1.0f);
+
+        // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+        playerCanShootBullets = true;
     }
 }
