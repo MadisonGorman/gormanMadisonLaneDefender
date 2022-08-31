@@ -12,6 +12,14 @@ public class MainCharacterControls : MonoBehaviour
     public KeyCode moveUpSecondOption = KeyCode.W;
     public KeyCode moveDownSecondOption = KeyCode.S;
 
+    // public KeyCode shootBullet = KeyCode.Space;
+
+    // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+    // public GameObject bulletReference;
+    // public Transform bulletSpawnLocation;
+
+    // public AudioClip bulletShot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +56,13 @@ public class MainCharacterControls : MonoBehaviour
 
             transform.position = newPosition;
         }
+
+        // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+        //if (Input.GetKey(shootBullet))
+        //{
+        // Instantiate(bulletReference, bulletSpawnLocation.position, Quaternion.identity);
+
+        // AudioSource.PlayClipAtPoint(bulletShot, bulletSpawnLocation.position);
+        //}
     }
 }
