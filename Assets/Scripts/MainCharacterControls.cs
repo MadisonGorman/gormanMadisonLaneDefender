@@ -21,7 +21,7 @@ public class MainCharacterControls : MonoBehaviour
     // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
     bool playerCanShootBullets = true;
 
-    // public AudioClip bulletShot;
+    public AudioClip bulletShotSound;
 
     // Start is called before the first frame update
     void Start()
@@ -63,8 +63,6 @@ public class MainCharacterControls : MonoBehaviour
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         if (Input.GetKey(shootBullet))
         {
-            // AudioSource.PlayClipAtPoint(bulletShot, bulletSpawnLocation.position);
-
             // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
             if (playerCanShootBullets)
             {
@@ -76,6 +74,8 @@ public class MainCharacterControls : MonoBehaviour
     // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
     IEnumerator SpawnBullet()
     {
+        AudioSource.PlayClipAtPoint(bulletShotSound, bulletSpawnLocation.position);
+
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         Instantiate(bulletReference, bulletSpawnLocation.position, Quaternion.identity);
 
