@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletFunctionality : MonoBehaviour
 {   // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-    public float speed = 5;
+    public float bulletSpeed = 7;
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     public Rigidbody2D bulletRigidbody2D;
@@ -13,7 +13,8 @@ public class BulletFunctionality : MonoBehaviour
     void Start()
     {
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-        bulletRigidbody2D.velocity = transform.right * speed;
+        // Enables the bullets to continuously travel to the right at the defined speed 
+        bulletRigidbody2D.velocity = transform.right * bulletSpeed;
     } 
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys

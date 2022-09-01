@@ -61,6 +61,7 @@ public class MainCharacterControls : MonoBehaviour
         }
 
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+        // When the spacebar is pressed or held down, bullets are shot, with a delay between each
         if (Input.GetKey(shootBullet))
         {
             // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
@@ -72,6 +73,7 @@ public class MainCharacterControls : MonoBehaviour
     }
 
     // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+    // Spawns a bullet, ensuring that players are prevented from shooting further for a brief period 
     IEnumerator SpawnBullet()
     {
         AudioSource.PlayClipAtPoint(bulletShotSound, bulletSpawnLocation.position);
