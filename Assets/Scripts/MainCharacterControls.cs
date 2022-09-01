@@ -73,7 +73,7 @@ public class MainCharacterControls : MonoBehaviour
     }
 
     // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
-    // Spawns a bullet, ensuring that players are prevented from shooting further for a brief period 
+    // Spawns a bullet, ensuring that players are prevented from shooting further for a brief period, a sound accompanies each bullet 
     IEnumerator SpawnBullet()
     {
         AudioSource.PlayClipAtPoint(bulletShotSound, bulletSpawnLocation.position);
