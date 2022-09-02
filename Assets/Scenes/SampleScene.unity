@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 37684485}
   - component: {fileID: 37684484}
   - component: {fileID: 37684488}
+  - component: {fileID: 37684489}
   m_Layer: 0
   m_Name: Snail Enemy
   m_TagString: Untagged
@@ -523,6 +524,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 1
   enemyHealth: 5
+--- !u!95 &37684489
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37684483}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 776f3e970d7f5514f8f667c7bf04827a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &38820574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8564,6 +8585,7 @@ GameObject:
   - component: {fileID: 1947094406}
   - component: {fileID: 1947094405}
   - component: {fileID: 1947094404}
+  - component: {fileID: 1947094409}
   m_Layer: 0
   m_Name: Blue Slime Enemy
   m_TagString: Untagged
@@ -8699,6 +8721,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1947094409
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947094403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 720c2e6a98920aa4cb5e69987aceba05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1961727518
 GameObject:
   m_ObjectHideFlags: 0
@@ -8880,6 +8922,7 @@ GameObject:
   - component: {fileID: 2016758420}
   - component: {fileID: 2016758419}
   - component: {fileID: 2016758423}
+  - component: {fileID: 2016758424}
   m_Layer: 0
   m_Name: Snake Enemy
   m_TagString: Untagged
@@ -9015,6 +9058,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 3
   enemyHealth: 3
+--- !u!95 &2016758424
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016758418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95512fcd47b11fd4eb19cbb3447f3fd2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2039874655
 GameObject:
   m_ObjectHideFlags: 0
