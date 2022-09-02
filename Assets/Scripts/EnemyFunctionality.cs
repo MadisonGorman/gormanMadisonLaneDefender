@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyFunctionality : MonoBehaviour
 {
+    // public AudioClip enemyHitSound;
+
+    // public AudioClip enemyDeathSound;
+
     // Start is called before the first frame update
     void Start()
     {
