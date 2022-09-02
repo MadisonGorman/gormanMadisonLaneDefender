@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyFunctionality : MonoBehaviour
 {
+    // public float enemyMovementSpeed;
+
+    // public int enemyHealth;
+
     // public AudioClip enemyHitSound;
 
     // public AudioClip enemyDeathSound;
