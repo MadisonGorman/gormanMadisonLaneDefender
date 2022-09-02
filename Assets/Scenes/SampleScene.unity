@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 37684486}
   - component: {fileID: 37684485}
   - component: {fileID: 37684484}
+  - component: {fileID: 37684488}
   m_Layer: 0
   m_Name: Snail Enemy
   m_TagString: Untagged
@@ -440,7 +441,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!212 &37684486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -508,6 +509,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &37684488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37684483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36779a44fcdbbc4d9e4d3f2c32484dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMovementSpeed: 1
+  enemyHealth: 5
 --- !u!1 &38820574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8576,7 +8591,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1947094405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8615,6 +8630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36779a44fcdbbc4d9e4d3f2c32484dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMovementSpeed: 5
+  enemyHealth: 1
 --- !u!212 &1947094407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8675,7 +8692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947094403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.218, y: 1.422, z: 0}
+  m_LocalPosition: {x: 8.184, y: 0.36, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8890,7 +8907,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &2016758420
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8977,7 +8994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016758418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.861, y: 1.454, z: 0}
+  m_LocalPosition: {x: 8.184, y: -0.99, z: 0}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8996,6 +9013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36779a44fcdbbc4d9e4d3f2c32484dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMovementSpeed: 3
+  enemyHealth: 3
 --- !u!1 &2039874655
 GameObject:
   m_ObjectHideFlags: 0
