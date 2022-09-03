@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // InvokeRepeating("SpawnEnemy", 1.0f, 2.0f);
     }
 
     // Update is called once per frame
@@ -19,4 +19,9 @@ public class GameController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
+
+    // void SpawnEnemy()
+    //{
+
+    //}
 }
