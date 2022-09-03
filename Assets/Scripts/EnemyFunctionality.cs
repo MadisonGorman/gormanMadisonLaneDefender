@@ -29,24 +29,27 @@ public class EnemyFunctionality : MonoBehaviour
     }
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+    // Defines the consequences of a bullet hitting an enemy
     void OnTriggerEnter2D(Collider2D detectCollision)
     {
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         Debug.Log(detectCollision.name);
 
+        // Upon an enemy being hit by a bullet, their health decreases by 1 and a sound plays
         if (detectCollision.gameObject.name == "Bullet(Clone)")
         {
             enemyHealth--;
 
             AudioSource.PlayClipAtPoint(enemyHitSound, enemyTransform.position);
+        }
 
-            if (enemyHealth == 0)
-            {
-                AudioSource.PlayClipAtPoint(enemyDeathSound, enemyTransform.position);
+        // Upon the enemy's health reaching 0, a sound plays and the enemy vanishes
+        if (enemyHealth == 0)
+        {
+            AudioSource.PlayClipAtPoint(enemyDeathSound, enemyTransform.position);
 
-                // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-                Destroy(gameObject);
-            }
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
         }
     }
 }
