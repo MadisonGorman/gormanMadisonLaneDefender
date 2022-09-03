@@ -524,6 +524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 1
   enemyHealth: 5
+  enemyTransform: {fileID: 37684487}
+  enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
 --- !u!95 &37684489
 Animator:
   serializedVersion: 4
@@ -7414,7 +7417,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a2979758acc2e64baf92e97c0651bf3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.08
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8654,6 +8657,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 5
   enemyHealth: 1
+  enemyTransform: {fileID: 1947094408}
+  enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
 --- !u!212 &1947094407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9058,6 +9064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementSpeed: 3
   enemyHealth: 3
+  enemyTransform: {fileID: 2016758422}
+  enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
 --- !u!95 &2016758424
 Animator:
   serializedVersion: 4
