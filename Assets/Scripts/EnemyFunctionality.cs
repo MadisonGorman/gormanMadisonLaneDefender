@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFunctionality : MonoBehaviour
 {
+    // NOTE: Need to have Enemy Hit Animations Transition Back to the Movement Animations
     public float enemyMovementSpeed;
 
     public int enemyHealth;
@@ -13,6 +14,9 @@ public class EnemyFunctionality : MonoBehaviour
     public AudioClip enemyHitSound;
 
     public AudioClip enemyDeathSound;
+
+    // Referenced: "2D Animation in Unity (Tutorial)" by Brackeys
+    public Animator enemyAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,9 @@ public class EnemyFunctionality : MonoBehaviour
         // Upon an enemy being hit by a bullet, their health decreases by 1 and a sound plays
         if (detectCollision.gameObject.name == "Bullet(Clone)")
         {
+            // Referenced: "2D Animation in Unity (Tutorial)" by Brackeys
+            enemyAnimator.SetBool("EnemyHasBeenHit", true);
+
             enemyHealth--;
 
             AudioSource.PlayClipAtPoint(enemyHitSound, enemyTransform.position);

@@ -527,6 +527,7 @@ MonoBehaviour:
   enemyTransform: {fileID: 37684487}
   enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
+  enemyAnimator: {fileID: 37684489}
 --- !u!95 &37684489
 Animator:
   serializedVersion: 4
@@ -8660,6 +8661,7 @@ MonoBehaviour:
   enemyTransform: {fileID: 1947094408}
   enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
+  enemyAnimator: {fileID: 1947094409}
 --- !u!212 &1947094407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9067,6 +9069,7 @@ MonoBehaviour:
   enemyTransform: {fileID: 2016758422}
   enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
+  enemyAnimator: {fileID: 2016758424}
 --- !u!95 &2016758424
 Animator:
   serializedVersion: 4
