@@ -30,6 +30,17 @@ public class EnemyFunctionality : MonoBehaviour
         // Referenced: answers.unity.com/questions/690884/how-to-move-an-object-along-x-axis-between-two-poi.html, "How to move an object along x-axis between two points?", Answer provided by robertbu, April 20, 2014 at 11:25PM
         // Results in the enemies continuously moving to the left at a distinct speed upon being spawned
         transform.Translate(Vector2.left * enemyMovementSpeed * Time.deltaTime);
+
+        // Upon the enemy reaching the other side of the screen, said enemy is destroyed and the player loses a life
+        if (enemyTransform.position.x <= -8.80)
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+
+            GameController gc = GameObject.FindObjectOfType<GameController>();
+
+            gc.DecreasePlayerLives();
+        }
     }
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
@@ -50,7 +61,7 @@ public class EnemyFunctionality : MonoBehaviour
             AudioSource.PlayClipAtPoint(enemyHitSound, enemyTransform.position);
         }
 
-        // Upon the enemy's health reaching 0, a sound plays and the enemy vanishes
+        // Upon the enemy's health reaching 0, a sound plays, the enemy vanishes, and the player's score increases
         if (enemyHealth == 0)
         {
             AudioSource.PlayClipAtPoint(enemyDeathSound, enemyTransform.position);
@@ -64,6 +75,7 @@ public class EnemyFunctionality : MonoBehaviour
         }
     }
 
+    // Upon the enemy colliding with the Main Character, said enemy is destroyed and the player loses a life
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Main Character")

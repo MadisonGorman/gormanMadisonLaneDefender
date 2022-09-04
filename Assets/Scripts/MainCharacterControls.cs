@@ -85,7 +85,7 @@ public class MainCharacterControls : MonoBehaviour
         playerCanShootBullets = false;
 
         // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.80f);
 
         // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
         playerCanShootBullets = true;

@@ -6,8 +6,6 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    // NOTE: Need to implement the functionality required for a life to be lost, aand said enemy to be destroyed, when the enemy reaches the other side of the screen
-
     // Referenced: "How to Spawn Monsters Randomly from different Spawn Points and Make them Follow the Player in Unity." by Alexander Zotov
     public Transform[] enemySpawnLocations;
     
@@ -35,14 +33,16 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 1.0f, 2.0f);
+        // Continuously spawns enemies with an established delay between each
+        InvokeRepeating("SpawnEnemy", 1.0f, 3.0f);
 
+        // Provides the Lives and Score Texts with distinct in-game appearances, reflective of the initial values, defined above
         playerLivesText.text = "Lives : " + playerLives.ToString();
-
         playerScoreText.text = "Score : " + playerScore.ToString();
     }
 
     // Update is called once per frame
+    // Upon pressing the R key, the game restarts
     void Update()
     {
         if(Input.GetKey(KeyCode.R))
@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Spawns a random enemy at a random spawn location
     public void SpawnEnemy()
     {
         // Referenced: "How to Spawn Monsters Randomly from different Spawn Points and Make them Follow the Player in Unity." by Alexander Zotov
@@ -63,6 +64,7 @@ public class GameController : MonoBehaviour
         Instantiate(enemyReferences [randomEnemyReferences], enemySpawnLocations [randomEnemySpawnLocations].position, Quaternion.identity);
     }
 
+    // Enables the player's score to be increased by a defined value and updated in-game
     public void IncreasePlayerScore()
     {
         playerScore += 100;
@@ -70,6 +72,7 @@ public class GameController : MonoBehaviour
         playerScoreText.text = "Score : " + playerScore.ToString();
     }
 
+    // Enables the player's lives to be decreased by 1 and updated in-game; a sound accompanies the loss of a life
     public void DecreasePlayerLives()
     {
         playerLives--;
@@ -78,6 +81,7 @@ public class GameController : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(playerLostALifeSound, gameControllerTransform.position);
 
+        // Upon the player attaining 0 lives, the game restarts
         if (playerLives == 0)
         {
             SceneManager.LoadScene(0);

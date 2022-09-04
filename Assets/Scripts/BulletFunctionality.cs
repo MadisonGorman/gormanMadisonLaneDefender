@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// NOTE: Need to ensure that the bullet is destroyed upon leaving the screen
 public class BulletFunctionality : MonoBehaviour
 {   // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     public float bulletSpeed = 7;
@@ -18,14 +19,28 @@ public class BulletFunctionality : MonoBehaviour
     } 
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+    // Upon the bullet hitting an enemy, said bullet is destroyed
     void OnTriggerEnter2D(Collider2D detectCollision)
     {
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         Debug.Log(detectCollision.name);
 
-        // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-        //Destroy(gameObject);
+        if(detectCollision.gameObject.name == "Blue Slime Enemy(Clone)")
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+        }
 
-        // NOTE: Need to ensure that the bullet is destroyed upon hitting an enemy or leaving the screen
+        if (detectCollision.gameObject.name == "Snail Enemy(Clone)")
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+        }
+
+        if (detectCollision.gameObject.name == "Snake Enemy(Clone)")
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+        }
     }
 }
