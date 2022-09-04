@@ -5361,7 +5361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614820746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.85, y: 2.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5390,6 +5390,12 @@ MonoBehaviour:
   - {fileID: 5341063752978182520, guid: 1a156409212ecbd429cdfa982a53dbac, type: 3}
   - {fileID: 9024753129540600264, guid: 546645815234eb943b1892fc16c4cb87, type: 3}
   - {fileID: 7926164697345298247, guid: e03a6d638db4bca459f7f43996eed067, type: 3}
+  gameControllerTransform: {fileID: 614820747}
+  playerLivesText: {fileID: 1466525785}
+  playerLives: 3
+  playerLostALifeSound: {fileID: 8300000, guid: 924bcf5945eb8c841986c648ea24abfa, type: 3}
+  playerScoreText: {fileID: 460166001}
+  playerScore: 0
 --- !u!1 &624098820
 GameObject:
   m_ObjectHideFlags: 0

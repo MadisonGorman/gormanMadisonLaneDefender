@@ -57,6 +57,23 @@ public class EnemyFunctionality : MonoBehaviour
 
             // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
             Destroy(gameObject);
+
+            GameController gc = GameObject.FindObjectOfType<GameController>();
+
+            gc.IncreasePlayerScore();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Main Character")
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+
+            GameController gc = GameObject.FindObjectOfType<GameController>();
+
+            gc.DecreasePlayerLives();
         }
     }
 }
