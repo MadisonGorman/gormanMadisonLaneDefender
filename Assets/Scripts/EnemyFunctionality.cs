@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyFunctionality : MonoBehaviour
 {
-    // NOTE: Need to have Enemy Hit Animations Transition Back to the Movement Animations
     public float enemyMovementSpeed;
+
+    int enemyMovementSpeedModifier = 1;
 
     public int enemyHealth;
 
@@ -29,7 +30,7 @@ public class EnemyFunctionality : MonoBehaviour
     {
         // Referenced: answers.unity.com/questions/690884/how-to-move-an-object-along-x-axis-between-two-poi.html, "How to move an object along x-axis between two points?", Answer provided by robertbu, April 20, 2014 at 11:25PM
         // Results in the enemies continuously moving to the left at a distinct speed upon being spawned
-        transform.Translate(Vector2.left * enemyMovementSpeed * Time.deltaTime);
+        transform.Translate(Vector2.left * enemyMovementSpeed * enemyMovementSpeedModifier * Time.deltaTime);
 
         // Upon the enemy reaching the other side of the screen, said enemy is destroyed and the player loses a life
         if (enemyTransform.position.x <= -8.80)
@@ -50,7 +51,7 @@ public class EnemyFunctionality : MonoBehaviour
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         Debug.Log(detectCollision.name);
 
-        // Upon an enemy being hit by a bullet, their health decreases by 1 and a sound plays
+        // Upon an enemy being hit by a bullet, their health decreases by 1 and a sound and an animation play
         if (detectCollision.gameObject.name == "Bullet(Clone)")
         {
             // Referenced: "MELEE COMBAT in Unity" by Brackeys
@@ -59,6 +60,9 @@ public class EnemyFunctionality : MonoBehaviour
             enemyHealth--;
 
             AudioSource.PlayClipAtPoint(enemyHitSound, enemyTransform.position);
+
+            // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+            StartCoroutine(StopEnemyMovement());   
         }
 
         // Upon the enemy's health reaching 0, a sound plays, the enemy vanishes, and the player's score increases
@@ -87,5 +91,17 @@ public class EnemyFunctionality : MonoBehaviour
 
             gc.DecreasePlayerLives();
         }
+    }
+
+    // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+    // Upon the enemy being hit by a bullet, said enemy ceases moving for a brief period
+    IEnumerator StopEnemyMovement()
+    {
+        enemyMovementSpeedModifier = 0;
+
+        // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
+        yield return new WaitForSeconds(0.25f);
+
+        enemyMovementSpeedModifier = 1;
     }
 }

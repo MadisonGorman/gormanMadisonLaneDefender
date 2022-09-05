@@ -106,7 +106,7 @@ MonoBehaviour:
   enemyHitSound: {fileID: 8300000, guid: bbf46ca1bbee63849bcb35578762690c, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: 02a12bf3cceb8024db1cb8f8a0b65c35, type: 3}
   enemyAnimator: {fileID: 5341063752978182514}
-  explosionReference: {fileID: 6909980765091766438, guid: 92939c52319524d4fb9fed5c82a618da, type: 3}
+  enemyRigidbody2D: {fileID: 5341063752978182527}
 --- !u!61 &5341063752978182526
 BoxCollider2D:
   m_ObjectHideFlags: 0
