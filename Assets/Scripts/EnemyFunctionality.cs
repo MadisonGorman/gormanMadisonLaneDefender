@@ -18,9 +18,6 @@ public class EnemyFunctionality : MonoBehaviour
     // Referenced: "2D Animation in Unity (Tutorial)" by Brackeys
     public Animator enemyAnimator;
 
-    // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-    //public GameObject explosionReference;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -58,10 +55,6 @@ public class EnemyFunctionality : MonoBehaviour
         {
             // Referenced: "2D Animation in Unity (Tutorial)" by Brackeys
             enemyAnimator.SetBool("EnemyHasBeenHit", true);
-
-            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
-            // Spawns an explosion which indicates that the enemy has been hit by a bullet
-            //Instantiate(explosionReference, enemyTransform.position, Quaternion.identity);
 
             enemyHealth--;
 

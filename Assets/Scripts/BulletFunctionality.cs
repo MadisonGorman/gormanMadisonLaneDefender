@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// NOTE: Need to ensure that the bullet is destroyed upon leaving the screen
 public class BulletFunctionality : MonoBehaviour
 {   // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     public float bulletSpeed = 7;
@@ -21,7 +20,18 @@ public class BulletFunctionality : MonoBehaviour
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         // Enables the bullets to continuously travel to the right at the defined speed 
         bulletRigidbody2D.velocity = transform.right * bulletSpeed;
-    } 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Upon the bullet reaching the other side of the screen, said bullet is destroyed
+        if (bulletTransform.position.x >= 9.41)
+        {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            Destroy(gameObject);
+        }
+    }
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     // Upon the bullet hitting an enemy, said bullet is destroyed
