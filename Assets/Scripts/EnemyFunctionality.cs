@@ -53,8 +53,8 @@ public class EnemyFunctionality : MonoBehaviour
         // Upon an enemy being hit by a bullet, their health decreases by 1 and a sound plays
         if (detectCollision.gameObject.name == "Bullet(Clone)")
         {
-            // Referenced: "2D Animation in Unity (Tutorial)" by Brackeys
-            enemyAnimator.SetBool("EnemyHasBeenHit", true);
+            // Referenced: "MELEE COMBAT in Unity" by Brackeys
+            enemyAnimator.SetTrigger("EnemyHasBeenHit");
 
             enemyHealth--;
 
