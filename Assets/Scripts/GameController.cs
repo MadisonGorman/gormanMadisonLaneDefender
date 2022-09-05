@@ -39,8 +39,8 @@ public class GameController : MonoBehaviour
         InvokeRepeating("SpawnEnemy", 1.0f, 3.0f);
 
         // Provides the Lives and Score Texts with distinct in-game appearances, reflective of the initial values, defined above
-        playerLivesText.text = "Lives : " + playerLives.ToString();
-        playerScoreText.text = "Score : " + playerScore.ToString();
+        playerLivesText.text = "Lives: " + playerLives.ToString();
+        playerScoreText.text = "Score: " + playerScore.ToString();
 
         // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
         // Enables the value of the player's high score to be displayed in-game

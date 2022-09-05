@@ -16,6 +16,7 @@ public class MainCharacterControls : MonoBehaviour
 
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     public GameObject bulletReference;
+    public GameObject explosionReference;
     public Transform bulletSpawnLocation;
 
     // Referenced: "Coroutines with IEnumerator & WaitForSeconds - Unity - C# Scripting Tutorial" by Learn Everything Fast
@@ -29,9 +30,7 @@ public class MainCharacterControls : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// Update is called once per frame; Enables the main character to move (up, down)
-    /// </summary>
+    // Update is called once per frame; Enables the main character to move (up, down)
     void Update()
     {
         float yMovement = Input.GetAxis("Vertical");
@@ -77,6 +76,10 @@ public class MainCharacterControls : MonoBehaviour
     IEnumerator SpawnBullet()
     {
         AudioSource.PlayClipAtPoint(bulletShotSound, bulletSpawnLocation.position);
+
+        // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+        // Spawns an explosion which conceals the spawning of the bullet
+        Instantiate(explosionReference, bulletSpawnLocation.position, Quaternion.identity);
 
         // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
         Instantiate(bulletReference, bulletSpawnLocation.position, Quaternion.identity);

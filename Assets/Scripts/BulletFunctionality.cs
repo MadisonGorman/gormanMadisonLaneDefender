@@ -10,6 +10,11 @@ public class BulletFunctionality : MonoBehaviour
     // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
     public Rigidbody2D bulletRigidbody2D;
 
+    // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+    public GameObject explosionReference;
+
+    public Transform bulletTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,17 +33,29 @@ public class BulletFunctionality : MonoBehaviour
         if(detectCollision.gameObject.name == "Blue Slime Enemy(Clone)")
         {
             // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            // Spawns an explosion which indicates that the enemy has been hit by a bullet
+            Instantiate(explosionReference, bulletTransform.position, Quaternion.identity);
+
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
             Destroy(gameObject);
         }
 
         if (detectCollision.gameObject.name == "Snail Enemy(Clone)")
         {
             // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            // Spawns an explosion which indicates that the enemy has been hit by a bullet
+            Instantiate(explosionReference, bulletTransform.position, Quaternion.identity);
+
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
             Destroy(gameObject);
         }
 
         if (detectCollision.gameObject.name == "Snake Enemy(Clone)")
         {
+            // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
+            // Spawns an explosion which indicates that the enemy has been hit by a bullet
+            Instantiate(explosionReference, bulletTransform.position, Quaternion.identity);
+
             // Referenced: "2D Shooting in Unity (Tutorial)" by Brackeys
             Destroy(gameObject);
         }
