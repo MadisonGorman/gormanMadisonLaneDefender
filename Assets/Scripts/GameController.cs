@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
 
     public int playerScore = 0;
 
+    public TextMeshProUGUI playerHighScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class GameController : MonoBehaviour
         // Provides the Lives and Score Texts with distinct in-game appearances, reflective of the initial values, defined above
         playerLivesText.text = "Lives : " + playerLives.ToString();
         playerScoreText.text = "Score : " + playerScore.ToString();
+
+        // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
+        // Enables the value of the player's high score to be displayed in-game
+        playerHighScoreText.text = PlayerPrefs.GetInt("PlayerHighScore", 0).ToString();
     }
 
     // Update is called once per frame
@@ -70,6 +76,17 @@ public class GameController : MonoBehaviour
         playerScore += 100;
 
         playerScoreText.text = "Score : " + playerScore.ToString();
+
+        // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
+        // The player's high score is updated in-game upon the player attaining a score which surpasses the high score
+        if(playerScore > PlayerPrefs.GetInt("PlayerHighScore", 0))
+        {
+            // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
+            PlayerPrefs.SetInt("PlayerHighScore", playerScore);
+
+            // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
+            playerHighScoreText.text = playerScore.ToString();
+        }
     }
 
     // Enables the player's lives to be decreased by 1 and updated in-game; a sound accompanies the loss of a life
