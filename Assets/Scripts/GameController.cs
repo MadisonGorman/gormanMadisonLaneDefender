@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour
     {
         playerScore += 100;
 
-        playerScoreText.text = "Score : " + playerScore.ToString();
+        playerScoreText.text = "Score: " + playerScore.ToString();
 
         // Referenced: "How to make a HIGH SCORE in Unity" by Brackeys
         // The player's high score is updated in-game upon the player attaining a score which surpasses the high score
@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour
     {
         playerLives--;
 
-        playerLivesText.text = "Lives : " + playerLives.ToString();
+        playerLivesText.text = "Lives: " + playerLives.ToString();
 
         AudioSource.PlayClipAtPoint(playerLostALifeSound, gameControllerTransform.position);
 
